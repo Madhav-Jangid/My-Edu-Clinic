@@ -58,7 +58,6 @@ const OrgRegisterForm = () => {
           toast.error("Please use another email address")
         }
         if(res.status == 200){
-          console.log(values)
           toast.success("Account Created");
           router.push("/serviceprovider/login") 
         }

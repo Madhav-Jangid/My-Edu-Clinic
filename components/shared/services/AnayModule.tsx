@@ -41,8 +41,8 @@ const AnayModule = () => {
           setmodules(res);
         }
 
-      } catch (error) {
-        console.log(error);
+      } catch (error:any) {
+        //console.log(error.message);
 
       }
     }

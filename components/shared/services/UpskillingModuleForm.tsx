@@ -97,9 +97,6 @@ const UpskillingModuleForm = ({
 
   // 2. Define a submit handler.
   async function onSubmit(values: z.infer<typeof ModuleFormSchema>) {
-    console.log(values, moduledategoryid);
-
-    // alert("this is working fine");
 
     if (type == "ADD") {
       try {
@@ -117,11 +114,8 @@ const UpskillingModuleForm = ({
         });
         alert(JSON.stringify(res));
         alert("Module is created, please close the form to avoid resubmission")
-        console.log(res);
-        
-        console.log(values);
       } catch (error) {
-        console.log(error);
+        //console.log(error);
       }
     } else {
       if (Image) {
@@ -130,13 +124,11 @@ const UpskillingModuleForm = ({
           module: { ...values, image: ImageUrl },
           moduleId: moduleId,
         });
-        console.log(res);
       } else {
         const res = await updateModule({
           module: { ...values },
           moduleId: moduleId,
         });
-        console.log(res);
       }
     }
   }

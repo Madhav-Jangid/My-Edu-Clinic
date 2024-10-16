@@ -8,7 +8,7 @@ import jwt from "jsonwebtoken";
 
 export const RegisterStudent = async ({ student }: RegisterStudentParams) => {
     try {
-        console.log("this is working");;
+        //console.log("this is working");;
         
         await connectToDatabase();
         const existingUser = await Student.findOne({ email: student.email });
@@ -18,12 +18,12 @@ export const RegisterStudent = async ({ student }: RegisterStudentParams) => {
         else {
             const hashedPassword = await bcrypt.hash(student.password, 10);
             const createdStudent = await Student.create({ name: student.name, email: student.email, password: hashedPassword, instituion: student.instituion, mobile: student.mobile });
-            console.log(createdStudent);
+            //console.log(createdStudent);
             return JSON.parse(JSON.stringify({createdStudent , status:200}));
         }
 
     } catch (error) {
-        console.log(error);
+        //console.log(error);
         throw new Error(error as string);
     }
 }
@@ -42,8 +42,8 @@ export const LoginStudent = async ({ student }: StudentLoginParams) => {
             }
             else {
                 const token = jwt.sign({ id: existUser._id }, "x-auth-token-secure-key");
-                console.log("this is existing user", existUser);
-                console.log("this is token of existing user", token);
+                //console.log("this is existing user", existUser);
+                //console.log("this is token of existing user", token);
 
 
 
@@ -51,7 +51,7 @@ export const LoginStudent = async ({ student }: StudentLoginParams) => {
             }
         }
     } catch (error) {
-        console.log(error);
+        //console.log(error);
 
         throw new Error(error as string);
     }
@@ -77,7 +77,7 @@ export const UpdateStudentData = async ({ student, studentId }: UpdateStudentPar
         }
         return JSON.parse(JSON.stringify({ message: "OK" }));
     } catch (error) {
-        console.log(error);
+        //console.log(error);
         return JSON.parse(JSON.stringify({error:error}));
 
     }
@@ -93,7 +93,7 @@ export const getStudentDataById = async(studentId: UpdateStudentParams)=>{
         return JSON.parse(JSON.stringify(getUserDetail));
     }
     catch (error) {
-         console.log(error);
+         //console.log(error);
     
 }
 }

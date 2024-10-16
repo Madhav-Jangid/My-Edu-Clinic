@@ -23,7 +23,6 @@ const ServiceCategory = ({selectValues , type} : seviceCategoryProps) => {
   return (
     <div>
             <Select onValueChange={(e)=>{
-                console.log(e);
                 setserviceValue(e);
             }} >
         <SelectTrigger className="w-[680px]">

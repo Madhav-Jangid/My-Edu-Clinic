@@ -14,7 +14,6 @@ export default function Home() {
       await connectToDatabase();
       const token = localStorage.getItem('x-auth-token');
       const data = await userAvailableorNot(token);
-      console.log(data);
     };
 
   }, [])

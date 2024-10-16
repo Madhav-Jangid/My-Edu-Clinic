@@ -23,16 +23,16 @@ const populateModuleDetails = async (query: any) => {
 
 export const createModule = async ({ serviceId, creatorId, module, categoryId }: createModuleParams) => {
     try {
-        console.log(categoryId);
+        //console.log(categoryId);
         await connectToDatabase();
-        console.log(module);
+        //console.log(module);
         const user = await userAvailableorNot(creatorId);
         const Ownerid = user.id;
         const createdModule = await Module.create({ ...module, serviceId: serviceId, creatorId: Ownerid, image: module.image, likes: [], review: [], categoryId: categoryId });
-        console.log(createdModule);
+        //console.log(createdModule);
         return JSON.parse(JSON.stringify(createdModule));
     } catch (error) {
-        console.log(error);
+        //console.log(error);
 
     }
 }
@@ -44,9 +44,9 @@ export const getAllOrganizationModule = async ({ organizationId, serviceId }: ge
 
         await connectToDatabase();
         const user = await userAvailableorNot(organizationId);
-        console.log("here we got user id or token", organizationId, user.id);
+        //console.log("here we got user id or token", organizationId, user.id);
 
-        console.log(user.id);
+        //console.log(user.id);
         let condition = {}
 
         if (serviceId && organizationId) {
@@ -69,12 +69,12 @@ export const getAllOrganizationModule = async ({ organizationId, serviceId }: ge
 
         }
         const ServiceModules = await Module.find(condition);
-        console.log(ServiceModules);
+        //console.log(ServiceModules);
         return JSON.parse(JSON.stringify(ServiceModules));
 
 
     } catch (error) {
-        console.log(error);
+        //console.log(error);
 
     }
 }
@@ -119,7 +119,7 @@ export const updateModule = async ({ moduleId, module }: UpdateModuleParams) => 
         return JSON.parse(JSON.stringify({ message: "Module Updated" }));
 
     } catch (error) {
-        console.log(error);
+        //console.log(error);
 
     }
 }
@@ -146,11 +146,11 @@ export const getAllModule = async () => {
         if (!AllModule) {
             return JSON.parse(JSON.stringify({ message: "No Module found" }));
         }
-        console.log(AllModule);
+        //console.log(AllModule);
 
         return JSON.parse(JSON.stringify(AllModule));
     } catch (error) {
-        console.log(error);
+        //console.log(error);
 
     }
 }
@@ -164,7 +164,7 @@ export const getModuleWithId = async ({ id }: getModulewithid) => {
         }
         return JSON.parse(JSON.stringify(moduleDetail));
     } catch (error) {
-        console.log(error);
+        //console.log(error);
 
     }
 }
@@ -202,7 +202,7 @@ export const AddLiketoModule = async ({ userId, moduleId }: addTolikeParams) => 
 
 
     } catch (error) {
-        console.log(error);
+        //console.log(error);
 
     }
 }
@@ -223,7 +223,7 @@ export const postFeedBack = async ({ message, moduleId, studentId }: postReviewP
         return JSON.parse(JSON.stringify(module));
 
     } catch (error) {
-        console.log(error);
+        //console.log(error);
         throw new Error(error as string);
 
     }
@@ -243,7 +243,7 @@ export const getModulewithserviceCategoryId = async ({
         return JSON.parse(JSON.stringify(modules));
 
     } catch (error) {
-        console.log(error);
+        //console.log(error);
         throw new Error(error as string);
 
     }

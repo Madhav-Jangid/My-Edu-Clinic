@@ -78,7 +78,6 @@ export function ComboBox() {
   const [ServiceCategoryName, setServiceCategoryName] = React.useState("");
 
   const handleService = () => {
-    console.log("Func Called");
     
     createService({
       service: {
@@ -88,7 +87,6 @@ export function ComboBox() {
       userToken: usertoken,
     }).then((res) => {
       setserviceList((prevState) => [...prevState, res]);
-      console.log("This is res: " , res);
       
       alert("service created");
     });

@@ -16,13 +16,11 @@ const page = async ({
   };
 }) => {
   const discussDetail = await getDiscussWithId({ id: id });
-  console.log(discussDetail);
 
   const fetchUserData = async (studentId: UpdateStudentParams) => {
     return await getStudentDataById(studentId);
   };
 
-  console.log("this is id of dedicated discussion pannel", id);
   return (
     <div>
       <StudentNav />

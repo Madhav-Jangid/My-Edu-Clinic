@@ -10,7 +10,7 @@ import Organization from "../models/serviceprovider.model";
 export const userAvailableorNot = async (userToken: any) => {
     try {
         await connectToDatabase();
-        console.log("middleware token:" , userToken);
+        //console.log("middleware token:" , userToken);
         
         if(!userToken){
             return JSON.parse(JSON.stringify({message:'Token not found'}));
@@ -26,7 +26,7 @@ export const userAvailableorNot = async (userToken: any) => {
         }
 
     } catch (error) {
-        console.log(error);
+        //console.log(error);
         
     }
 }

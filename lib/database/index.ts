@@ -19,14 +19,14 @@ const connectToDatabase = async() => {
                 dbName:'EduClinic',
                 bufferCommands:true
             }).then((res)=>{
-                console.log('Databse get connected');
+                //console.log('Databse get connected');
             }).catch((e)=>{
-                console.log(e as string);
+                //console.log(e as string);
             })
             cached.conn = await cached.promise;
             return cached.conn;
     } catch (error) {
-        console.log(error);
+        //console.log(error);
         throw new Error("Some database error cached");
     }
 }

@@ -69,14 +69,9 @@ const ProjectForm = () => {
 
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(poster, ppt);
     const imageUrl = await UploadOnCloudinary(poster);
     const pptUrl = await UploadOnCloudinary(ppt);
-    console.log(imageUrl, pptUrl);
     const res = await createProject({ amount: values.amount, college: values.college, detail: values.detail, isGranted: values.isGranted, mail: values.mail, name: values.name, phone: values.phone, poster: imageUrl, ppt: pptUrl, student: usertoken });
-    console.log("this is response ", res);
-
-    console.log(values)
   }
 
   const inputStyle = "outline-none border-[1px] border-gray-500 bg-transparent rounded-[10px]"

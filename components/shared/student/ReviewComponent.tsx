@@ -44,7 +44,6 @@ const ReviewComponent = ({
       message: feedBackmessage,
     });
     setfeedback(res.review as any);
-    console.log(res);
   };
 
   const fetchUserData = async (studentId: UpdateStudentParams) => {
@@ -76,7 +75,6 @@ const ReviewComponent = ({
         <div className="flex gap-2 flex-col mt-10">
           {feedback.map(async (curr: any) => {
             const userData = await fetchUserData(curr.student);
-            console.log(curr);
             return (
               <div className="pb-4 w-full border-b  flex items-start gap-4">
                 <div className="flex">

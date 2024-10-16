@@ -34,7 +34,7 @@ function HealthCounselingFilter({ items, _id}: FilteredModulesProps,) {
     async function fetchModules() {
       try {
         const modules: Module[] = await getAllModule();
-        console.log(`all Modulues: ${JSON.stringify(modules)}`)
+        //console.log(`all Modulues: ${JSON.stringify(modules)}`)
         setAllModules(modules);
       } catch (error) {
         console.error("Error fetching modules:", error);
@@ -43,10 +43,10 @@ function HealthCounselingFilter({ items, _id}: FilteredModulesProps,) {
     async function fetchModuleByCat(serviceId: string, organizationId?: string) {
       try {
         const modules: Module[] = await getModulewithserviceCategoryId({ categoryId: _id });
-        console.log(JSON.stringify(modules));
+        //console.log(JSON.stringify(modules));
         setModuleById(modules);
       } catch (error) {
-        console.log("Error fetching modules by id:", error);
+        //console.log("Error fetching modules by id:", error);
       }
     }
 
@@ -57,7 +57,7 @@ function HealthCounselingFilter({ items, _id}: FilteredModulesProps,) {
   }, [_id]);
 
   useEffect(() => {
-    console.log(items);
+    //console.log(items);
   }, [items]);
 
   useEffect(() => {
@@ -84,9 +84,9 @@ function HealthCounselingFilter({ items, _id}: FilteredModulesProps,) {
   }, [allModules, items]);
 
   useEffect(() => {
-    console.log(filteredModules)
+    //console.log(filteredModules)
   }, [filteredModules]);
-  console.log(`filter module id: ${_id}`)
+  //console.log(`filter module id: ${_id}`)
 
   return ( 
    <>

@@ -45,12 +45,11 @@ const AddDiscuss = ({ setIsFormVisible }: any) => {
         userToken: userToken,
         image: imageUrl,
       });
-      console.log("Discussion posted successfully!", res);
       setDrawerOpen(false);
       router.refresh()
 
     } catch (error) {
-      console.log("Error while posting discussion:", error);
+      //console.log("Error while posting discussion:", error);
     }
   };
 

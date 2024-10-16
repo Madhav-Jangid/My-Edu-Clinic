@@ -37,12 +37,12 @@ export const createDiscuss = async ({message , userToken , image , title} : Crea
             image:image,
             reply:[]
         });
-        console.log(createdDiscuss);
+        //console.log(createdDiscuss);
         return JSON.parse(JSON.stringify(createDiscuss));
 
         
     } catch (error) {
-        console.log(error);
+        //console.log(error);
         
     }
 }
@@ -52,13 +52,13 @@ export const getDiscuss = async ()=>{
     try {
         await connectToDatabase();
         const getDiscussion = await populateDiscuss(Discussion.find({}));
-        console.log("this is get discussion",getDiscussion);
+        //console.log("this is get discussion",getDiscussion);
         
 
         return JSON.parse(JSON.stringify(getDiscussion));
         
     } catch (error) {
-        console.log(error);
+        //console.log(error);
         
     }
 }
@@ -71,7 +71,7 @@ export const getDiscussWithId =  async ({id} : getDisucssIdParams) =>{
         return JSON.parse(JSON.stringify(discussed));
         
     } catch (error) {
-        console.log(error);
+        //console.log(error);
         
     }
 }
@@ -92,7 +92,7 @@ export const CreateReplyAction = async ({message , repliedUser  , postId}: creat
         
 
     } catch (error) {
-        console.log(error);
+        //console.log(error);
         
     }
 }

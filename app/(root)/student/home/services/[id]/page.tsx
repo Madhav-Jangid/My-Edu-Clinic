@@ -10,7 +10,6 @@ const page =  async ({
   }}) => {
 
     const allModuleforservice = await studentGetOrgsModule(({serviceId:id}));
-    console.log("this is trhe value do moduke" , allModuleforservice);
     
 
   return (

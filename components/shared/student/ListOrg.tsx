@@ -25,9 +25,6 @@ export default function ListOrg({ organization }: OrganizationProps) {
   const [searchName, setSearchName] = useState<any>("");
   const [filterationValue, setFilterationValue] = useState<any>();
 
-  useEffect(() => {
-    console.log(searchName);
-  }, []);
 
   const sampleImages = [
     { name: "Sunset", url: "https://via.placeholder.com/300?text=Sunset" },

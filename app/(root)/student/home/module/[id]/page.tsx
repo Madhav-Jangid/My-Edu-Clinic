@@ -24,7 +24,6 @@ const Page = async ({
   };
 }) => {
   const moduleDetails = await getModuleWithId({ id: id });
-  console.log(moduleDetails);
 
   const allModules = await studentGetOrgsModule({
     serviceId: moduleDetails.serviceId,

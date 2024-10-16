@@ -21,7 +21,7 @@ export const UploadOnCloudinary = async (datatoUpload: any) => {
         throw new Error("No File selected");
     }
 } catch (error) {
-    console.log(error);
+    //console.log(error);
     
 }
 }

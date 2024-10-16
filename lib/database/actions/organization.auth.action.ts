@@ -22,7 +22,7 @@ export const registerOrganization = async ({organization} : registerOrganization
             return JSON.parse(JSON.stringify({createdOrg , status:200}));
         }
     } catch (error) {
-        console.log(error);
+        //console.log(error);
         throw new Error(error as string);
         
     }
@@ -36,8 +36,8 @@ export const LoginOrganizatio = async ({organization} :LoginOrganizationParams) 
             return JSON.parse(JSON.stringify({message:"Organization Not Found" , status:401}));
         }
         else{
-            console.log(organization.orgPassword);
-            console.log(existOrg.orgPassword);
+            //console.log(organization.orgPassword);
+            //console.log(existOrg.orgPassword);
             
             
             const isMatch = await bcrypt.compare(organization.orgPassword , existOrg.orgPassword);
@@ -50,7 +50,7 @@ export const LoginOrganizatio = async ({organization} :LoginOrganizationParams) 
             }
         }
     } catch (error) {
-        console.log(error);
+        //console.log(error);
         throw new Error(error as string);
         
     }
@@ -67,7 +67,7 @@ export const getAllOrganization = async () =>{
         return JSON.parse(JSON.stringify(allOrgs));
 
     } catch (error) {
-        console.log(error);
+        //console.log(error);
         
     }
 }
@@ -83,7 +83,7 @@ export const getOrganizationasPerId = async  (userId : string)=>{
         }
         return JSON.parse(JSON.stringify(myOrg));
     } catch (error) {
-        console.log(error);
+        //console.log(error);
         
     }
 }
@@ -94,12 +94,12 @@ export const getOrganizationasPerId = async  (userId : string)=>{
 
 export const UpdateAndApplyforApprovalAction =  async ({org} : ApplyforApprovalParams)=>{
     try {
-        console.log("this is working properly");
-        console.log("Organization id: " , org);
+        //console.log("this is working properly");
+        //console.log("Organization id: " , org);
             
         const organizationId = await userAvailableorNot(org.orgId);
 
-           console.log("Found Organization: ",organizationId);
+           //console.log("Found Organization: ",organizationId);
         
 
         const organizationData = await Organization.findByIdAndUpdate(organizationId.id ,{
@@ -111,15 +111,15 @@ export const UpdateAndApplyforApprovalAction =  async ({org} : ApplyforApprovalP
         });
 
         if(!organizationData){
-            console.log("Some error found");
+            //console.log("Some error found");
             
             return JSON.parse(JSON.stringify({message:"Data Not Updated , Some error occured" , status:400}));
         }
-        console.log("this is data",organizationData);
+        //console.log("this is data",organizationData);
         
         return JSON.parse(JSON.stringify({data:organizationData , status :200}));
     } catch (error) {
-        console.log(error);
+        //console.log(error);
         throw new Error(error as string)
         
     }

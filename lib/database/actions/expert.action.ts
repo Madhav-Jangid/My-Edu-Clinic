@@ -29,7 +29,7 @@ export const registerExpertAction = async ({expert}:registerExpertParams)=>{
         return JSON.parse(JSON.stringify(registerdExpert));
 
     } catch (error) {
-        console.log(error);
+        //console.log(error);
         throw new Error(error as string);
         
     }
@@ -60,7 +60,7 @@ export const LoginExpertParams = async({email , password}: loginExpertParams)=>{
         }
         return JSON.parse(JSON.stringify({...ExistExpert._doc , token}));
     } catch (error) {
-        console.log(error);
+        //console.log(error);
         throw new Error(error as string);
         
     }
@@ -83,7 +83,7 @@ export const getAppliedApprovalOrganization = async ()=>{
         }
         return JSON.parse(JSON.stringify(appliedorg));
     } catch (error) {
-        console.log(error);
+        //console.log(error);
         throw new Error(error as string);
         
     }
@@ -116,7 +116,7 @@ export const ApproveOrganizationasPerid = async ({orgId} : ApproveParams)=>{
         return JSON.parse(JSON.stringify({message:"OK"}));
         
     } catch (error) {
-        console.log(error);
+        //console.log(error);
         throw new Error(error as string);
     }
 }
@@ -142,7 +142,7 @@ export const rejectOrganization = async  ({message ,orgId} : rejectApprovalParam
             </div>`
         })
     } catch (error) {
-        console.log(error);
+        //console.log(error);
         throw new Error(error as string);
         
     }
@@ -162,11 +162,11 @@ export const getunApprovedModules = async ()=>{
         if(!modules){
             return JSON.parse(JSON.stringify({message:"No modules founds"}));
         }
-        console.log(modules);
+        //console.log(modules);
         
         return JSON.parse(JSON.stringify(modules));
     } catch (error) {
-        console.log(error);
+        //console.log(error);
         throw new Error(error as string);
         
     }
@@ -194,7 +194,7 @@ export const approveModuleReq = async  ( id : string)=>{
 
         return JSON.parse(JSON.stringify({module}));
     } catch (error) {
-        console.log(error);
+        //console.log(error);
         throw new Error(error as string);
     }
 }
@@ -222,12 +222,12 @@ export const declineModuleReq = async ( id : string , message : string)=>{
             </>`
         });
 
-        console.log("this is working");
+        //console.log("this is working");
         
 
         return JSON.parse(JSON.stringify({message:'OK'}))
     } catch (error) {
-        console.log(error);
+        //console.log(error);
         
     }
 }

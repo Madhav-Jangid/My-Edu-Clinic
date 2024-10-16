@@ -14,7 +14,6 @@ const page = async ({
 
 
     const data = await getProjectWithId({id:id}); 
-    console.log("this is the value if project response" , data);
     
   return (
     <div>

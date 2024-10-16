@@ -25,7 +25,7 @@ export const createServiceCategory = async ({category} : CreateServiceCategoryPa
         const createdCategory = await Servicecategory.create({...category});
         return JSON.parse(JSON.stringify(createdCategory));
     } catch (error) {
-        console.log(error);
+        //console.log(error);
         
     }
 }
@@ -38,7 +38,7 @@ export const getAllServiceCategory = async () => {
         const allServicecategory = await Servicecategory.find({});
         return JSON.parse(JSON.stringify(allServicecategory)); 
     } catch (error) {
-        console.log(error);
+        //console.log(error);
     }
 }
 
@@ -48,7 +48,7 @@ export const getAllServiceCategory = async () => {
 //     try {
         
 //     } catch (error) {
-//         console.log(error);
+//         //console.log(error);
 //         throw new Error(error as string);
         
 //     }
@@ -63,10 +63,10 @@ export const createService = async ({service , userToken} : createServiceParams)
         }
         const organizationID = userId.id;
         const createdService = await ServiceStore.create({name:service.serviceName , category:service.serviceCategory , owner:organizationID});
-        console.log("your service get created ",createdService);
+        //console.log("your service get created ",createdService);
         return JSON.parse(JSON.stringify(createdService));   
     } catch (error) {
-        console.log(error);
+        //console.log(error);
     }
 }
 
@@ -78,7 +78,7 @@ export const getAllServices = async () => {
         return JSON.parse(JSON.stringify(allServ));
         
     } catch (error) {
-        console.log(error);
+        //console.log(error);
         
     }
 }
@@ -97,7 +97,7 @@ export const getAllServicearPerOrgId = async ( orgId:any) => {
         return JSON.parse(JSON.stringify(orgService));
         
     } catch (error) {
-        console.log(error);
+        //console.log(error);
         
     }
 }
@@ -106,20 +106,20 @@ export const getUserServices = async (userToken : any) => {
     try {
         
         await connectToDatabase();
-        console.log("this is the value of user tokens" , userToken);
+        //console.log("this is the value of user tokens" , userToken);
         const user =  await userAvailableorNot(userToken);
-        console.log("this is the value of user " , user);
-        console.log("This is the user id: " , user.id);
+        //console.log("this is the value of user " , user);
+        //console.log("This is the user id: " , user.id);
         
         const conditions = {
             owner:user.id
         }
 
         const orgsServices = await ServiceStore.find(conditions);
-        console.log("this is all services" , orgsServices);
+        //console.log("this is all services" , orgsServices);
         return JSON.parse(JSON.stringify(orgsServices));
     } catch (error) {
-        console.log(error);
+        //console.log(error);
         
     } 
 }
@@ -129,11 +129,11 @@ export const getServiceCategoryWithId = async  ( id : string)=>{
     try {
         await connectToDatabase();
         const result = await populateData(ServiceStore.findById(id));
-        console.log("this is the data",result);
+        //console.log("this is the data",result);
         return JSON.parse(JSON.stringify(result));
         
     } catch (error) {
-        console.log(error);
+        //console.log(error);
         throw new Error(error as string)
         
     }

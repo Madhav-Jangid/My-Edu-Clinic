@@ -23,10 +23,10 @@ export const createProject = async ({name , detail , amount, college , isGranted
             mail:mail,
             student:user.id
         });
-        console.log(createdProject);
+        //console.log(createdProject);
         return JSON.parse(JSON.stringify(createdProject));
     } catch (error) {
-        console.log(error);
+        //console.log(error);
         
     }
 }
@@ -39,7 +39,7 @@ export const getProject = async ()=>{
         return JSON.parse(JSON.stringify(projects));
 
     } catch (error) {
-        console.log(error);
+        //console.log(error);
         
     }
 
@@ -52,7 +52,7 @@ export const getProjectWithId = async ({ id } : getprojectWithIdParams) =>{
         return JSON.parse(JSON.stringify(projectDetail));
         
     } catch (error) {
-        console.log(error);
+        //console.log(error);
         
     }
 

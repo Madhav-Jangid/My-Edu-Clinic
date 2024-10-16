@@ -47,7 +47,7 @@ const ModulesMainUi = ({ serviceId, moduleCategoryId }: ModuleMainUiProps) => {
         setModules(res as IModule[]);
         setLoadingModules(false);
       } catch (error) {
-        console.log(error);
+        //console.log(error);
       }
     };
     fetchModule();

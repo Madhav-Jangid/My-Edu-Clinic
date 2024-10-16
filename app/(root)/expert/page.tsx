@@ -14,7 +14,6 @@ const page = async () => {
   const orgs = await getAppliedApprovalOrganization();
   const modules = await getunApprovedModules();
 
-  console.log("this is the value of applie dagewncis", orgs);
 
   return (
     <div>

@@ -57,7 +57,6 @@ const StudentRegisterForm = () => {
     // ✅ This will be type-safe and validated.
 
 
-    console.log(values)
   }
   return (
     <Form {...form}>

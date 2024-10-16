@@ -40,7 +40,7 @@ function EducationDetailForm() {
   function onSubmit(values: z.infer<typeof formSchema>) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
-    console.log(values);
+    //console.log(values);
   }
   return (
     <div>

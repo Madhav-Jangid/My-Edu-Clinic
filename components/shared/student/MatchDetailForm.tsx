@@ -23,14 +23,12 @@ function MatchDetailForm() {
   useEffect(() => {
     const getAllServCategory = async () => {
       const res = await getAllServiceCategory();
-      console.log(`service cat: ${JSON.stringify(res)}`);
 
       setserviceCategory(res);
     };
     const fetchData = async () => {
       const modules = await getAllModule();
       setAllModules(modules);
-      console.log(modules);
     }; 
 
     fetchData();
@@ -80,7 +78,6 @@ function MatchDetailForm() {
     else if (option===7){
       return <InternshipForm id={id}/>;
     }
-    console.log("Testing");
   };
   
 
@@ -112,7 +109,6 @@ function MatchDetailForm() {
                     onClick={() => {
                       setOption(id);
                       setId(item._id);
-                      console.log(`match detail form: ${JSON.stringify(item)}`)
                     }}
                   >
                     {item.name}

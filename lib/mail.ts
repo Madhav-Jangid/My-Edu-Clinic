@@ -28,10 +28,10 @@ export async function sendMail  ({
   
     try {
       const testRes = await transport.verify();
-      console.log(testRes);
+      //console.log(testRes);
       
     } catch (error) {
-      console.log(error);
+      //console.log(error);
       
     }
   
@@ -44,7 +44,7 @@ export async function sendMail  ({
         html:body
       })
     } catch (error) {
-      console.log(error);
+      //console.log(error);
       
     }
   

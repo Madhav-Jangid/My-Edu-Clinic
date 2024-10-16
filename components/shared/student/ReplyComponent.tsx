@@ -25,14 +25,12 @@ const ReplyComponent = ({ postId }: ReplyProps) => {
   }
 
   const replyToPost = async () => {
-    console.log("this is working");
 
     const res = await CreateReplyAction({
       message: replyMessage,
       postId: postId,
       repliedUser: usertoken,
     });
-    console.log("this is user response", res);
     router.refresh()
     setreplyMessage("")
   };

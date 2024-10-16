@@ -55,10 +55,10 @@ function UpskillingForm({id}: orgId) {
     async function fetchModuleByCat(serviceId: string, organizationId?: string) {
       try {
         const modules: Module[] = await getModulewithserviceCategoryId({ categoryId: id });
-        // console.log(JSON.stringify(modules));
+        // //console.log(JSON.stringify(modules));
         setModuleById(modules);
       } catch (error) {
-        console.log("Error fetching modules by id:", error);
+        //console.log("Error fetching modules by id:", error);
       }
     }
     if (id) { // Check if _id exists before fetching module by id
@@ -90,10 +90,10 @@ function UpskillingForm({id}: orgId) {
   function onSubmit(values: z.infer<typeof formSchema>) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
-    console.log(values)
+    //console.log(values)
     setData(values)
   }
-    console.log(`id: ${id}`);
+    //console.log(`id: ${id}`);
   return (
     <div>
       <Form {...form}>

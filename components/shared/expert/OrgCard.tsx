@@ -27,7 +27,6 @@ const OrgCard = ({ orgData }: orgCardProps) => {
   const approveReq = async (organizationId: string) => {
     const status = await ApproveOrganizationasPerid({ orgId: organizationId });
     window.location.reload();
-    console.log(status);
   };
 
   const declineReq = async (message: string, id: string) => {

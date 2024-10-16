@@ -69,7 +69,6 @@ const OrgServices = () => {
       },
       userToken: usertoken,
     }).then((res) => {
-      console.log("Service Created: ", res);
       alert(`Service is successfully created, Please refresh the page`)
       setOpen(false)
     });
@@ -107,7 +106,6 @@ const OrgServices = () => {
         }
       }
       const myOrganization = await getOrganizationasPerId(usertoken);
-      console.log(myOrganization);
 
       if (myOrganization) {
         if (myOrganization.orgCategory != "6639d49c3215cb4cf09e89d0") {
