@@ -15,7 +15,7 @@ export default function Home() {
       const token = localStorage.getItem('x-auth-token');
       const data = await userAvailableorNot(token);
     };
-
+    connect();
   }, [])
 
 
